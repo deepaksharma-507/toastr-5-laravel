@@ -49,7 +49,7 @@ class Toastr {
         $notifications = $this->session->get('toastr::notifications');
         if(!$notifications) $notifications = [];
 
-        $output = '<script type="text/javascript">';
+        $output = '<script type="text/javascript" nonce="'.request()->attributes->get('cspNonce').'">';
         $lastConfig = [];
         foreach($notifications as $notification) {
 
